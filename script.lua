@@ -53,6 +53,7 @@ local function printHand(hand, name)
 end
 local playerTurn = true
 local FILEHOST = "https://raw.githubusercontent.com/the-broz/blackjack.lol-assets/main/"
+local unDealedCard = "https://raw.githubusercontent.com/the-broz/blackjack.lol-assets/main/nothing.png"
 local playerHand = {}
 local dealerHand = {}
 local deck = {}
