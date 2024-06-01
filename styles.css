@@ -2,3 +2,9 @@ centered {
     align-items: center;
     gap: 10;
 }
+
+
+game-cont {
+    align-items: center;
+    gap: 50;
+}
