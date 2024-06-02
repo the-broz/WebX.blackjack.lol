@@ -152,10 +152,14 @@ local function handlePlayerTurnStand(forced)
                 end
             elseif dealerValue > playerValue then
                 get("status").set_content("Dealer wins!")
-            else
+            elseif dealerValue == playerValue then
                 get("status").set_content("Tie!")
                 PLAYER_BALANCE = PLAYER_BET + PLAYER_BALANCE
                 get("balance").set_content("Remaining Balance: $"..PLAYER_BALANCE)
+            else
+                    get("status").set_content("Tie!")
+                    PLAYER_BALANCE = PLAYER_BET + PLAYER_BALANCE
+                    get("balance").set_content("Remaining Balance: $"..PLAYER_BALANCE)
             end
         end
     end
