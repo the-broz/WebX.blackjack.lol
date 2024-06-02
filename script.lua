@@ -135,6 +135,10 @@ local function handlePlayerTurnHit()
             get("balance").set_content("Remaining Balance: $"..PLAYER_BALANCE)
         else
             playerTurn = true
+             if playerValue > 21 then
+            get("status").set_content("Dealer wins!")
+            get("plr-value").set_content("BUST")
+            playerTurn = false
         end
     end
 end
