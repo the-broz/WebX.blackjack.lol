@@ -66,6 +66,10 @@ local PAY_RATE = 1.5
 local BJ_RATE = 3
 
 local function playBlackjack()
+    if PLAYER_BALANCE < PLAYER_BET then
+        warn("Insufficient funds")
+        return
+    end
     PLAYER_BALANCE = PLAYER_BALANCE - PLAYER_BET
     get("balance").set_content("Remaining Balance: $"..PLAYER_BALANCE)
     get("pcard3").set_source(unDealedCard)
