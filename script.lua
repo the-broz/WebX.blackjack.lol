@@ -222,7 +222,7 @@ end
 local function allIn()
     PLAYER_BET = PLAYER_BALANCE
     get("balance").set_content("Remaining Balance: $"..PLAYER_BALANCE)
-    get("bet").set_content("Current Bet: ALL IN") 
+    get("bet").set_content("Current Bet: $"..PLAYER_BET) 
 end
 
 
