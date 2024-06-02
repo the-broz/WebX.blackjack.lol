@@ -92,6 +92,13 @@ local function playBlackjack()
 
     local playerValue = calculateHandValue(playerHand)
     get("dlr-value").set_content(DISP_dealerValue)
+    if playerValue == 21 and #playerHand == 2 then
+        get("status").set_content("Player wins!")
+        get("plr-value").set_content("BJ")
+        PLAYER_BALANCE = PLAYER_BET * BJ_RATE + PLAYER_BALANCE
+        get("balance").set_content("Remaining Balance: $"..PLAYER_BALANCE)
+        return
+    end
     get("plr-value").set_content(playerValue)
     get("pcard1").set_source(FILEHOST..string.lower(playerHand[1].value).."_of_"..string.lower(playerHand[1].suit)..".png")
     get("pcard2").set_source(FILEHOST..string.lower(playerHand[2].value).."_of_"..string.lower(playerHand[2].suit)..".png")
