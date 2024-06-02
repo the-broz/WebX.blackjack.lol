@@ -104,9 +104,16 @@ end
 
 local function handlePlayerTurnHit()
     if playerTurn then
+        local playerValue = calculateHandValue(playerHand)
+        if playerValue > 21 then
+            get("status").set_content("Dealer wins!")
+            get("plr-value").set_content("BUST")
+            playerTurn = false
+            return
+        end
         playerTurn = false
         table.insert(playerHand, dealCard(deck))
-        local playerValue = calculateHandValue(playerHand)
+        playerValue = calculateHandValue(playerHand)
         get("plr-value").set_content(playerValue)
         get("pcard"..#playerHand).set_source(FILEHOST..string.lower(playerHand[#playerHand].value).."_of_"..string.lower(playerHand[#playerHand].suit)..".png")
         if playerValue > 21 then
