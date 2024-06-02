@@ -124,6 +124,8 @@ local function handlePlayerTurnHit()
             get("status").set_content("Player wins!")
             get("plr-value").set_content("BJ")
             playerTurn = false
+            PLAYER_BALANCE = PLAYER_BET * BJ_RATE + PLAYER_BALANCE
+            get("balance").set_content("Remaining Balance: $"..PLAYER_BALANCE)
         else
             playerTurn = true
         end
