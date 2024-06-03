@@ -142,6 +142,7 @@ local function handlePlayerTurnHit()
         end
     end
 end
+end
 
 local function handlePlayerTurnStand(forced)
     if playerTurn or forced then
